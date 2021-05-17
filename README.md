@@ -15,7 +15,7 @@ I extracted the OkCupid dataset from [Kaggle](https://www.kaggle.com/andrewmvd/o
 ## Missing Values
 The OkCupid dataset had many rows and columns with missing values (i.e. null). The features income, and offspring were completely removed as they had over 59% missing values or values which were out of range (income: -1).
 
-![null values](./Images/null_values.png)
+![null values](https://github.com/puneetsran/okcupid/blob/master/figures/null_values.png?raw=true)
 
 1. `smokes`, `drinks`, `education`, `body_type`, and `drugs` were label encoded (i.e. doing drugs is 1, not doing drugs is 0)
 
@@ -23,22 +23,22 @@ The OkCupid dataset had many rows and columns with missing values (i.e. null). T
 - `ethnicity`, all `essay` columns, and `pets` were also transformed using CountVectorizer (for pets only likes pet X, and has pet X were kept)
 - For essays, the length of essay was also turned into a feature
 
-![essay len](./Images/essay_len.png)
+![essay len](https://github.com/puneetsran/okcupid/blob/master/figures/essay_len.png?raw=true)
 
-![ethnicities](./Images/ethnicities.png)
+![ethnicities](https://github.com/puneetsran/okcupid/blob/master/figures/ethnicities.png?raw=true)
 
 3. `status`, `orientation`, and `job` were transformed using OneHotEncoder
 - `location` was split into `city`, `state`, and `country` and then one-hot-encoded
 
-![map](./map.png)
+![map](https://github.com/puneetsran/okcupid/blob/master/figures/map.png?raw=true)
 
-![relationship status](./Images/status.png)
+![relationship status](https://github.com/puneetsran/okcupid/blob/master/figures/status.png?raw=true)
 
-![orientation](./Images/orientaion.png)
+![orientation](https://github.com/puneetsran/okcupid/blob/master/figures/orientaion.png?raw=true)
 
 4. `last_online` was transformed into `days_since_last_online`
 
-![days since last online](./Images/days_since_last_online.png)
+![days since last online](https://github.com/puneetsran/okcupid/blob/master/figures/days_since_last_online.png?raw=true)
 
 Lastly, I was also able to extract missing values from the essay columns such as, if an essay contained the string ‘i am vegetarian’, then their diet was vegetarian. I applied this only if a user’s diet was unknown. Furthermore, some features had ‘rather not say’ as an option which I used if I could not find a users diet from the essay column. Since ‘rather not say’ is a valid response on OkCupid, it made sense to use it for some features.
 
@@ -62,17 +62,17 @@ For all clusterings, I used the following procedure:
 To summarize the results:
 - All clusterings indicate 4 clusters based on where ‘elbow’ occurs (the purple line is drawn for reference):
 
-![orientation](./Images/k_means_scree_plot.png)
+![kmeans clusters](https://github.com/puneetsran/okcupid/blob/master/figures/k_means_scree_plot.png?raw=true)
 
-![orientation](./Images/agglomerative_scree_plot.png)
+![agg clusters](https://github.com/puneetsran/okcupid/blob/master/figures/agglomerative_scree_plot.png?raw=true)
 
-![orientation](./Images/silhouette_score_plot.png)
+![silhouette score kmeans](https://github.com/puneetsran/okcupid/blob/master/figures/silhouette_score_plot.png?raw=true)
 
-![orientation](./Images/silhouette_scores.png)
+![dbscan](https://github.com/puneetsran/okcupid/blob/master/figures/silhouette_scores.png?raw=true)
 
 The adjusted_rand_score was 0.47 which means that the clusterings are in some agreement. The crosstab below illustrates that majority of the data falls within groups 1 and 2 (while also not being diagonal or cross-diagonal) which is not a bad thing but it would be ideal to have the data separated evenly across all labels. For reference 33.29% of data is in column 1 (row 1), while 28.86% is in column 2 (row 3).
 
-![orientation](./Images/adj_rand_score.png)
+![adj rand score](https://github.com/puneetsran/okcupid/blob/master/figures/adj_rand_score.png?raw=true)
 
 Furthermore, a summary of the **labels** is as follows:
 <p>
