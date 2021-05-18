@@ -13,7 +13,7 @@ Here is what each file contains:
 I extracted the OkCupid dataset from [Kaggle](https://www.kaggle.com/andrewmvd/okcupid-profiles) in CSV format. The single .csv file was used throughout my entire project. Age, income, and height were the only numeric features, and all others being type object.
 
 ## Missing Values
-The OkCupid dataset had many rows and columns with missing values (i.e. null). The features income, and offspring were completely removed as they had over 59% missing values or values which were out of range (income: -1).
+The OkCupid dataset had many rows and columns with missing values (i.e. null). The features `income`, and `offspring` were completely removed as they had over 59% missing values or values which were out of range (income: -1).
 
 ![null values](https://github.com/puneetsran/okcupid/blob/master/figures/null_values.png?raw=true)
 
@@ -40,7 +40,7 @@ The OkCupid dataset had many rows and columns with missing values (i.e. null). T
 
 ![days since last online](https://github.com/puneetsran/okcupid/blob/master/figures/days_since_last_online.png?raw=true)
 
-Lastly, I was also able to extract missing values from the essay columns such as, if an essay contained the string ‘i am vegetarian’, then their diet was vegetarian. I applied this only if a user’s diet was unknown. Furthermore, some features had ‘rather not say’ as an option which I used if I could not find a users diet from the essay column. Since ‘rather not say’ is a valid response on OkCupid, it made sense to use it for some features.
+Lastly, I was also able to extract missing values from the essay columns such as, if an essay contained the string ‘i am vegetarian’, then their `diet` was vegetarian. I applied this only if a user’s diet was unknown. Furthermore, some features had ‘rather not say’ as an option which I used if I could not find a users diet from the essay column. Since ‘rather not say’ is a valid response on OkCupid, it made sense to use it for some features.
 
 ## Modelling
 For this project, the main modelling techniques were clustering while others (such as PLC, and TSNE) were simply for visualizations of different clusters. The main modelling techniques used were:
@@ -52,7 +52,7 @@ For this project, the main modelling techniques were clustering while others (su
 KMeans, Agglomerative, and DBSCAN are some of the main techniques we have learnt in this program and it made sense to try and use all for practice and to see if they would all indicate similar results. If they do indicate similar results, then perhaps I was on the right track.
 For all clusterings, I used the following procedure:
 
-1. Min-max Scale non-oneHotEncoded or non-transformed features (age, height, essay_len, and days_since_last_online), since clustering algorithms are distance based and features which are one-hot-encoded have a higher chance of not being represented in the final outcome.
+1. Min-max scale non-oneHotEncoded or non-transformed features (`age`, `height`, `essay_len`, and `days_since_last_online`), since clustering algorithms are distance based and features which are one-hot-encoded have a higher chance of not being represented in the final outcome.
 2. Determine optimal number of clusters based on scree plots and silhouette scores (i.e. visual interpretation based on where the elbow lies).
 3. Assign labels based on clusterings back into the data-frame, by creating new columns to hold those labels.
 4. Analyze results based on:
@@ -93,8 +93,8 @@ Furthermore, a summary of the **labels** is as follows:
 | days_since_last_online |      0.85     |  1.5 | 0.87 | 0.81 |         0.73         | 1.79 | 0.48 | 0.81 |
 </p>
 
-From the summary table above, major differences can be seen in essay length, and days since last online. Overall, a higher score indicates likelihood of that feature (ex: 4.15 education indicates likelihood of user having higher education). Perhaps it can be said that:
-- Users in KMeans group 0 write long essays, visits OkCupid more often (based on days since last online), and is the least into Catholicism (or not at all)
+From the summary table above, major differences can be seen in essay length, and days since last online. Overall, a higher score indicates likelihood of that feature (ex: 4.15 `education` indicates likelihood of user having higher education). Perhaps it can be said that:
+- Users in KMeans group 0 write long essays, visits OkCupid more often (based on `days_since_last_online`), and is the least into Catholicism (or not at all)
     - Perhaps this group is the most serious about finding a partner and hence they invest the time in telling as much as they can about themselves.
 - Users in KMeans  group 3 are older, a little bit more into Catholicism
 - Users in KMeans  Group 1 have not visited OkCupid for a long time, they write small essays, and are a little bit more into Catholicism
