@@ -5,7 +5,7 @@ Here is what each file contains:
 - **ok_cupid_cleaning_and_transformation2.ipynb** is PART 2 of data cleaning/ transformation/ EDA
 - **ok_cupid_models.ipynb** contains all machine learning models (clustering)
 
-### This project is my capstone project for BrainStation's Data Science program. It explores the OkCupid dataset in which I try to answer if I can find meaningful clusters of users and answer the following questions:
+### This project explores the OkCupid dataset in which I try to answer if I can find meaningful clusters of users and answer the following questions:
 1. Is there a lot of variety of people which OkCupid markets to its users or is everybody the same
 2. Are there distinct groups on OkCupid in which the users can be separated into?
 
